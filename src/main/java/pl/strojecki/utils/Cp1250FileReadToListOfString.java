@@ -1,0 +1,31 @@
+package pl.strojecki.utils;
+
+import java.io.*;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Cp1250FileReadToListOfString {
+
+    public static List<String> read(String file) {
+        List<String> readData = new LinkedList<>();
+        String line = "";
+        BufferedReader bufferedReader;
+
+        try {
+            bufferedReader = new BufferedReader(
+                                new InputStreamReader(
+                                new FileInputStream(file), "CP1250"));
+
+            while ((line = bufferedReader.readLine()) != null) {
+                readData.add(line);
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return readData;
+    }
+}

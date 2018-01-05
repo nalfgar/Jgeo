@@ -1,14 +1,14 @@
 package pl.strojecki.utils;
 
 import java.io.*;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cp1250FileReadToListOfString {
 
     public static List<String> read(String file) {
-        List<String> readData = new LinkedList<>();
-        String line = "";
+        List<String> readData = new ArrayList<>();
+        String line = null;
         BufferedReader bufferedReader;
 
         try {
@@ -17,7 +17,7 @@ public class Cp1250FileReadToListOfString {
                                 new FileInputStream(file), "CP1250"));
 
             while ((line = bufferedReader.readLine()) != null) {
-                readData.add(line);
+                if (!line.equals("")) readData.add(line);
             }
 
         } catch (FileNotFoundException e) {

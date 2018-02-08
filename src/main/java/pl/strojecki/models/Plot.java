@@ -20,4 +20,8 @@ public class Plot {
         plotArea = line.getArea();
         ground.put(line.getGround(), line.getArea());
     }
+
+    public BigDecimal getPlotArea() {
+        return plotArea;
+    }
 }

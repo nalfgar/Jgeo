@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 @Data
 @ToString(exclude = "matcher")
 public class Line {
-    private static Pattern pattern = Pattern.compile("([\\w-/]+)\\s+([\\w+-Ł]+)\\s+(-?\\d+\\.\\d+)");
+    private static Pattern pattern = Pattern.compile("([\\w-/\\.]+)\\s+([\\w+-Ł]+)\\s+(-?\\d+\\.\\d+)");
     private Matcher matcher;
 
     private String number;

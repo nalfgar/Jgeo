@@ -12,16 +12,25 @@ import java.util.List;
 public class MainApp {
 
     private static Plots plots = new Plots();
+    private static String workDirectory;
+    private static String txtDbName;
+    private static String txtDbFile;
 
     public static void main(String[] args) {
 
-                List<String> list = new ArrayList<>();
-        list = Cp1250FileReadToListOfString.read(Config.WORKING_DIRECTORY_LINUX + Config.PRZECIECIA_BAZ_CP1250_WIN);
+        if(System.getProperty("os.name").contains("Windows")){
+            txtDbFile = Config.WORKING_DIRECTORY_WIN + Config.DB_CP1250_WIN;
+        } else if(System.getProperty("os.name").contains("Linux")){
+            txtDbFile = Config.WORKING_DIRECTORY_LINUX + Config.DB_CP1250_WIN;
+        }
+
+        List<String> list = new ArrayList<>();
+        list = Cp1250FileReadToListOfString.read(txtDbFile);
         for (String string : list) {
             plots.update(new Plot(new Line(string)));
         }
-//
+
         System.out.println(plots.size());
-//        plots.print();
+        plots.print();
     }
 }

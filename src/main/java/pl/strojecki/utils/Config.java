@@ -8,6 +8,7 @@ public class Config {
     public static final String WORKING_DIRECTORY_WIN = "c:\\Users\\Darek\\IdeaProjects\\Jgeo\\src\\main\\resources\\";
     public static final String WORKING_DIRECTORY_LINUX = "/home/darek/IdeaProjects/Jgeo/src/main/resources/";
 
-    public static final String PRZECIECIA_BAZ_CP1250_WIN = "PrzBaz.txt";
+//    PRZECIECIA_BAZ
+    public static final String DB_CP1250_WIN = "PrzBaz.txt";
 
 }

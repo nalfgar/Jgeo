@@ -6,17 +6,17 @@ import java.math.BigDecimal;
 
 public class PlotModel {
     private String number;
-    private String vectorArea;
-    private String vectorReducedArea;
-    private String vectorDeviationArea;
+    private BigDecimal vectorArea;
+    private BigDecimal vectorReducedArea;
+    private BigDecimal vectorDeviationArea;
 
     public PlotModel(String string) {
         String[] splittedLine = string.split("\\s+");
         if (splittedLine.length == 5){
             number = splittedLine[1];
-            vectorArea = splittedLine[2];
-            vectorReducedArea = splittedLine[3];
-            vectorDeviationArea = splittedLine[4];
+            vectorArea = new BigDecimal(splittedLine[2]);
+            vectorReducedArea = new BigDecimal(splittedLine[3]);
+            vectorDeviationArea = new BigDecimal(splittedLine[4]);
         } else {
             throw new IllegalArgumentException("bad line: " + string);
         }
@@ -31,27 +31,27 @@ public class PlotModel {
         this.number = number;
     }
 
-    public String getVectorArea() {
+    public BigDecimal getVectorArea() {
         return vectorArea;
     }
 
-    public void setVectorArea(String vectorArea) {
+    public void setVectorArea(BigDecimal vectorArea) {
         this.vectorArea = vectorArea;
     }
 
-    public String getVectorReducedArea() {
+    public BigDecimal getVectorReducedArea() {
         return vectorReducedArea;
     }
 
-    public void setVectorReducedArea(String vectorReducedArea) {
+    public void setVectorReducedArea(BigDecimal vectorReducedArea) {
         this.vectorReducedArea = vectorReducedArea;
     }
 
-    public String getVectorDeviationArea() {
+    public BigDecimal getVectorDeviationArea() {
         return vectorDeviationArea;
     }
 
-    public void setVectorDeviationArea(String vectorDeviationArea) {
+    public void setVectorDeviationArea(BigDecimal vectorDeviationArea) {
         this.vectorDeviationArea = vectorDeviationArea;
     }
 
@@ -59,9 +59,9 @@ public class PlotModel {
     public String toString() {
         return "PlotModel{" +
                 "number='" + number + '\'' +
-                ", vectorArea='" + vectorArea + '\'' +
-                ", vectorReducedArea='" + vectorReducedArea + '\'' +
-                ", vectorDeviationArea='" + vectorDeviationArea + '\'' +
+                ", vectorArea=" + vectorArea +
+                ", vectorReducedArea=" + vectorReducedArea +
+                ", vectorDeviationArea=" + vectorDeviationArea +
                 '}';
     }
 }

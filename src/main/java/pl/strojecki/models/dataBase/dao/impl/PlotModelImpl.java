@@ -16,9 +16,9 @@ public class PlotModelImpl implements PlotDao{
 
         try {
             preparedStatement.setString(1, plotModel.getNumber());
-            preparedStatement.setString(2, plotModel.getVectorArea());
-            preparedStatement.setString(3, plotModel.getVectorReducedArea());
-            preparedStatement.setString(4, plotModel.getVectorDeviationArea());
+            preparedStatement.setBigDecimal (2, plotModel.getVectorArea());
+            preparedStatement.setBigDecimal(3, plotModel.getVectorReducedArea());
+            preparedStatement.setBigDecimal(4, plotModel.getVectorDeviationArea());
             preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -26,4 +26,5 @@ public class PlotModelImpl implements PlotDao{
 
 
     }
+
 }

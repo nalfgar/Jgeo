@@ -1,9 +1,11 @@
 package pl.strojecki.models.dataBase.dao;
 
-import pl.strojecki.models.Line;
+
+import lombok.Data;
 
 import java.math.BigDecimal;
 
+@Data
 public class PlotModel {
     private String number;
     private BigDecimal vectorArea;
@@ -23,45 +25,4 @@ public class PlotModel {
 
     }
 
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public BigDecimal getVectorArea() {
-        return vectorArea;
-    }
-
-    public void setVectorArea(BigDecimal vectorArea) {
-        this.vectorArea = vectorArea;
-    }
-
-    public BigDecimal getVectorReducedArea() {
-        return vectorReducedArea;
-    }
-
-    public void setVectorReducedArea(BigDecimal vectorReducedArea) {
-        this.vectorReducedArea = vectorReducedArea;
-    }
-
-    public BigDecimal getVectorDeviationArea() {
-        return vectorDeviationArea;
-    }
-
-    public void setVectorDeviationArea(BigDecimal vectorDeviationArea) {
-        this.vectorDeviationArea = vectorDeviationArea;
-    }
-
-    @Override
-    public String toString() {
-        return "PlotModel{" +
-                "number='" + number + '\'' +
-                ", vectorArea=" + vectorArea +
-                ", vectorReducedArea=" + vectorReducedArea +
-                ", vectorDeviationArea=" + vectorDeviationArea +
-                '}';
-    }
 }
